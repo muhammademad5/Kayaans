@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحليلات دار كيان</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+            <span>تحليلات</span>
+            <span class="separator">›</span>
+            <span>دار كيان</span>
+        </div>
+
+        <!-- Section 1: إجمالي الكتب -->
+        <section class="section">
+            <h1 class="section-title">إجمالي الكتب</h1>
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-label">العدد</div>
+                    <div class="card-value">4</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: تحليلات الكتب -->
+        <section class="section">
+            <h1 class="section-title">تحليلات الكتب</h1>
+            <p class="section-subtitle">إجمال إيرادات الكتاب ودقائق الإستماع</p>
+            <div class="stats-cards">
+                <div class="stat-card revenue-card">
+                    <div class="stat-icon">↗</div>
+                    <div class="stat-title">الإيرادات</div>
+                    <div class="stat-value">$6,500.00</div>
+                </div>
+                <div class="stat-card listening-card">
+                    <div class="stat-icon">↗</div>
+                    <div class="stat-title">دقائق الإستماع</div>
+                    <div class="stat-value">1,500.0</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: الكتب الأكثر مبيعًا -->
+        <section class="section">
+            <h1 class="section-title">الكتب الأكثر مبيعًا</h1>
+            <p class="section-subtitle">الكتب الأعلى في الإيردات من خلال المنصات المرفوع عليها الكتاب</p>
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>إسم الكتاب</th>
+                            <th>وقت الرفع</th>
+                            <th>إيرادات</th>
+                            <th>المنصات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>كتاب اختر لي</td>
+                            <td>11/3/2025</td>
+                            <td>$5,000.00</td>
+                            <td>وجيز</td>
+                        </tr>
+                        <tr>
+                            <td>كتاب لما تركتني وحيدة</td>
+                            <td>11/2/2025</td>
+                            <td>$1,500.00</td>
+                            <td>وجيز سماوي أبجد</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Section 4: الكتب الأكثر إستماعا -->
+        <section class="section">
+            <h1 class="section-title">الكتب الأكثر إستماعا</h1>
+            <div class="table-container">
+                <table class="data-table listening-table">
+                    <thead>
+                        <tr>
+                            <th>إسم الكتاب</th>
+                            <th class="sortable">
+                                دقائق الإستماع
+                                <span class="sort-icon">↓</span>
+                            </th>
+                            <th>المنصات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>كتاب دار اليوم</td>
+                            <td>9852</td>
+                            <td>أقرأ لي</td>
+                        </tr>
+                        <tr>
+                            <td>كتاب اختر لي</td>
+                            <td>1000</td>
+                            <td>وجيز</td>
+                        </tr>
+                        <tr>
+                            <td>كتاب لما تركتني وحيدة</td>
+                            <td>500</td>
+                            <td>وجيز سماوي أبجد</td>
+                        </tr>
+                        <tr>
+                            <td>كتاب لماذا ابكي واخي يضحك</td>
+                            <td>0</td>
+                            <td>وجيز</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Section 5: الدول الأكثر إستماعا -->
+        <section class="section">
+            <h1 class="section-title">الدول الأكثر إستماعا</h1>
+            <p class="section-subtitle">نسبة وعدد الدول المستمعة الى الكتب</p>
+            <div class="charts-container">
+                <div class="chart-card">
+                    <div class="chart-legend">
+                        <div class="legend-title">الدول الأكثر إستماعا</div>
+                        <div class="legend-item">
+                            <span class="legend-dot" style="background-color: #3B82F6;"></span>
+                            <span>مصر</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-dot" style="background-color: #F97316;"></span>
+                            <span>الجزائر</span>
+                        </div>
+                    </div>
+                    <canvas id="donutChart"></canvas>
+                </div>
+                <div class="chart-card">
+                    <div class="chart-legend">
+                        <div class="legend-title">الدول الأكثر إستماعا</div>
+                        <div class="legend-item">
+                            <span class="legend-dot" style="background-color: #60A5FA;"></span>
+                            <span>مصر</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-dot" style="background-color: #34D399;"></span>
+                            <span>الجزائر</span>
+                        </div>
+                    </div>
+                    <canvas id="barChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: الفئات العمرية -->
+        <section class="section">
+            <h1 class="section-title">الفئات العمرية</h1>
+            <p class="section-subtitle age-subtitle">طوال الوقت</p>
+            <div class="chart-card-full">
+                <canvas id="ageChart"></canvas>
+            </div>
+        </section>
+
+        <!-- Section 7: توزيع الجنس -->
+        <section class="section">
+            <h1 class="section-title">توزيع الجنس</h1>
+            <p class="section-subtitle">متوسط نسبة الذكور والإناث خلال السنة</p>
+            <div class="chart-card-full">
+                <div class="chart-legend-top">
+                    <div class="legend-item">
+                        <span class="legend-dot" style="background-color: #60A5FA;"></span>
+                        <span>نسبة الذكور :Average</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-dot" style="background-color: #FBBF24;"></span>
+                        <span>نسبة الإناث : Average</span>
+                    </div>
+                </div>
+                <canvas id="genderChart"></canvas>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
