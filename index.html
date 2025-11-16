@@ -51,11 +51,16 @@
     </aside>
 
     <div class="container">
-        <!-- Breadcrumb -->
-        <div class="breadcrumb">
-            <span>تحليلات</span>
-            <span class="separator">›</span>
-            <span>دار كيان</span>
+        <!-- Breadcrumb with Menu Button -->
+        <div class="breadcrumb-wrapper">
+            <div class="breadcrumb">
+                <span>تحليلات</span>
+                <span class="separator">›</span>
+                <span>دار كيان</span>
+            </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <span class="menu-icon">☰</span>
+            </button>
         </div>
 
         <!-- Section 1: إجمالي الكتب -->
@@ -224,11 +229,11 @@
                 <div class="chart-legend-top">
                     <div class="legend-item">
                         <span class="legend-dot" style="background-color: #60A5FA;"></span>
-                        <span>نسبة الذكور :Average</span>
+                        <span>نسبة الذكور :<span class="average-text">Average</span></span>
                     </div>
                     <div class="legend-item">
                         <span class="legend-dot" style="background-color: #FBBF24;"></span>
-                        <span>نسبة الإناث : Average</span>
+                        <span>نسبة الإناث : <span class="average-text">Average</span></span>
                     </div>
                 </div>
                 <canvas id="genderChart"></canvas>

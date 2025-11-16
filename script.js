@@ -180,9 +180,21 @@ if (ageCtx) {
                         usePointStyle: true,
                         padding: 15,
                         font: {
-                            size: 12
+                            size: 13,
+                            weight: '600'
                         },
-                        color: '#374151'
+                        color: 'rgba(255, 255, 255, 0.95)',
+                        generateLabels: function(chart) {
+                            const original = Chart.defaults.plugins.legend.labels.generateLabels;
+                            const labels = original.call(this, chart);
+                            labels.forEach((label, index) => {
+                                const dataset = chart.data.datasets[index];
+                                const colors = ['#3B82F6', '#FBBF24', '#EC4899'];
+                                label.fillStyle = colors[index] || dataset.backgroundColor;
+                                label.strokeStyle = colors[index] || dataset.backgroundColor;
+                            });
+                            return labels;
+                        }
                     }
                 },
                 tooltip: {
@@ -316,6 +328,7 @@ if (genderCtx) {
 // Sidebar Toggle Functionality
 const sidebar = document.getElementById('sidebar');
 const sidebarToggle = document.getElementById('sidebarToggle');
+const menuToggle = document.getElementById('menuToggle');
 const sidebarClose = document.getElementById('sidebarClose');
 const sidebarOverlay = document.getElementById('sidebarOverlay');
 
@@ -333,6 +346,10 @@ function closeSidebar() {
 
 if (sidebarToggle) {
     sidebarToggle.addEventListener('click', openSidebar);
+}
+
+if (menuToggle) {
+    menuToggle.addEventListener('click', openSidebar);
 }
 
 if (sidebarClose) {
