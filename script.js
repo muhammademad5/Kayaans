@@ -117,10 +117,10 @@ if (barCtx) {
                         font: {
                             size: 12
                         },
-                        color: '#6B7280'
+                        color: 'rgba(255, 255, 255, 0.7)'
                     },
                     grid: {
-                        color: '#E5E7EB',
+                        color: 'rgba(255, 255, 255, 0.1)',
                         drawBorder: false
                     }
                 },
@@ -129,7 +129,7 @@ if (barCtx) {
                         font: {
                             size: 12
                         },
-                        color: '#6B7280'
+                        color: 'rgba(255, 255, 255, 0.7)'
                     },
                     grid: {
                         display: false,
@@ -201,7 +201,7 @@ if (ageCtx) {
                         font: {
                             size: 12
                         },
-                        color: '#6B7280',
+                        color: 'rgba(255, 255, 255, 0.7)',
                         maxRotation: 45,
                         minRotation: 45
                     },
@@ -221,10 +221,10 @@ if (ageCtx) {
                         font: {
                             size: 12
                         },
-                        color: '#6B7280'
+                        color: 'rgba(255, 255, 255, 0.7)'
                     },
                     grid: {
-                        color: '#E5E7EB',
+                        color: 'rgba(255, 255, 255, 0.1)',
                         drawBorder: false
                     }
                 }
@@ -279,7 +279,7 @@ if (genderCtx) {
                         font: {
                             size: 12
                         },
-                        color: '#6B7280',
+                        color: 'rgba(255, 255, 255, 0.7)',
                         maxRotation: 45,
                         minRotation: 45
                     },
@@ -299,10 +299,10 @@ if (genderCtx) {
                         font: {
                             size: 12
                         },
-                        color: '#6B7280'
+                        color: 'rgba(255, 255, 255, 0.7)'
                     },
                     grid: {
-                        color: '#E5E7EB',
+                        color: 'rgba(255, 255, 255, 0.1)',
                         drawBorder: false
                     }
                 }
@@ -312,4 +312,51 @@ if (genderCtx) {
         }
     });
 }
+
+// Sidebar Toggle Functionality
+const sidebar = document.getElementById('sidebar');
+const sidebarToggle = document.getElementById('sidebarToggle');
+const sidebarClose = document.getElementById('sidebarClose');
+const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+function openSidebar() {
+    sidebar.classList.add('open');
+    sidebarOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeSidebar() {
+    sidebar.classList.remove('open');
+    sidebarOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+if (sidebarToggle) {
+    sidebarToggle.addEventListener('click', openSidebar);
+}
+
+if (sidebarClose) {
+    sidebarClose.addEventListener('click', closeSidebar);
+}
+
+if (sidebarOverlay) {
+    sidebarOverlay.addEventListener('click', closeSidebar);
+}
+
+// Close sidebar on escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && sidebar.classList.contains('open')) {
+        closeSidebar();
+    }
+});
+
+// Handle window resize to ensure sidebar state is correct
+window.addEventListener('resize', function() {
+    if (window.innerWidth > 768) {
+        // Desktop: ensure sidebar is visible
+        sidebar.classList.remove('open');
+        sidebarOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+});
 

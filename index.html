@@ -8,6 +8,48 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 </head>
 <body>
+    <!-- Sidebar Toggle Button (Mobile) -->
+    <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+        <span class="toggle-icon">☰</span>
+    </button>
+
+    <!-- Sidebar Overlay (Mobile) -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-brand">
+                <div class="brand-icon">P</div>
+                <div class="brand-info">
+                    <div class="brand-name">Povo Distribution</div>
+                    <div class="brand-subtitle">لوحة التحليلات</div>
+                </div>
+            </div>
+            <button class="sidebar-close" id="sidebarClose" aria-label="Close sidebar">
+                <span>×</span>
+            </button>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-item active">
+                <span class="nav-icon">📊</span>
+                <span class="nav-text">تحليلات</span>
+            </a>
+            <a href="#" class="nav-item">
+                <span class="nav-icon">💰</span>
+                <span class="nav-text">الإيرادات</span>
+            </a>
+            <a href="#" class="nav-item">
+                <span class="nav-icon">📚</span>
+                <span class="nav-text">الكتب</span>
+            </a>
+            <a href="#" class="nav-item">
+                <span class="nav-icon">📝</span>
+                <span class="nav-text">الملاحظات</span>
+            </a>
+        </nav>
+    </aside>
+
     <div class="container">
         <!-- Breadcrumb -->
         <div class="breadcrumb">
@@ -19,7 +61,8 @@
         <!-- Section 1: إجمالي الكتب -->
         <section class="section">
             <h1 class="section-title">إجمالي الكتب</h1>
-            <div class="card">
+            <div class="total-books-card">
+                <div class="card-yellow-bar"></div>
                 <div class="card-content">
                     <div class="card-label">العدد</div>
                     <div class="card-value">4</div>
@@ -33,14 +76,16 @@
             <p class="section-subtitle">إجمال إيرادات الكتاب ودقائق الإستماع</p>
             <div class="stats-cards">
                 <div class="stat-card revenue-card">
-                    <div class="stat-icon">↗</div>
-                    <div class="stat-title">الإيرادات</div>
-                    <div class="stat-value">$6,500.00</div>
+                    <div class="stat-bar">
+                        <div class="stat-title">الإيرادات</div>
+                        <div class="stat-value">$6,500.00</div>
+                    </div>
                 </div>
                 <div class="stat-card listening-card">
-                    <div class="stat-icon">↗</div>
-                    <div class="stat-title">دقائق الإستماع</div>
-                    <div class="stat-value">1,500.0</div>
+                    <div class="stat-bar">
+                        <div class="stat-title">دقائق الإستماع</div>
+                        <div class="stat-value">1,500.0</div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -64,13 +109,17 @@
                             <td>كتاب اختر لي</td>
                             <td>11/3/2025</td>
                             <td>$5,000.00</td>
-                            <td>وجيز</td>
+                            <td><span class="platform-badge">وجيز</span></td>
                         </tr>
                         <tr>
                             <td>كتاب لما تركتني وحيدة</td>
                             <td>11/2/2025</td>
                             <td>$1,500.00</td>
-                            <td>وجيز سماوي أبجد</td>
+                            <td>
+                                <span class="platform-badge">وجيز</span>
+                                <span class="platform-badge">سماوي</span>
+                                <span class="platform-badge">أبجد</span>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -96,22 +145,26 @@
                         <tr>
                             <td>كتاب دار اليوم</td>
                             <td>9852</td>
-                            <td>أقرأ لي</td>
+                            <td><span class="platform-badge">أقرأ لي</span></td>
                         </tr>
                         <tr>
                             <td>كتاب اختر لي</td>
                             <td>1000</td>
-                            <td>وجيز</td>
+                            <td><span class="platform-badge">وجيز</span></td>
                         </tr>
                         <tr>
                             <td>كتاب لما تركتني وحيدة</td>
                             <td>500</td>
-                            <td>وجيز سماوي أبجد</td>
+                            <td>
+                                <span class="platform-badge">وجيز</span>
+                                <span class="platform-badge">سماوي</span>
+                                <span class="platform-badge">أبجد</span>
+                            </td>
                         </tr>
                         <tr>
                             <td>كتاب لماذا ابكي واخي يضحك</td>
                             <td>0</td>
-                            <td>وجيز</td>
+                            <td><span class="platform-badge">وجيز</span></td>
                         </tr>
                     </tbody>
                 </table>

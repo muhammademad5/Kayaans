@@ -6,16 +6,234 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #F5F5F5;
-    color: #333;
+    background-color: #111827;
+    color: #FFFFFF;
     padding: 20px;
     line-height: 1.6;
+    position: relative;
+    transition: margin-right 0.3s ease;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 280px;
+    height: 100vh;
+    background-color: #7A5F3F;
+    border-left: none;
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+}
+
+.brand-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.brand-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.brand-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #FFFFFF;
+    line-height: 1.2;
+}
+
+.brand-subtitle {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.2;
+}
+
+.sidebar-close {
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.sidebar-close:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #FFFFFF;
+}
+
+.sidebar-nav {
+    flex: 1;
+    padding: 20px 0;
+    overflow-y: auto;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s;
+    border-right: 3px solid transparent;
+    margin: 4px 0;
+}
+
+.nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #FFFFFF;
+}
+
+.nav-item.active {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #FFFFFF;
+    border-right-color: #FFFFFF;
+    font-weight: 600;
+}
+
+.nav-icon {
+    font-size: 20px;
+    width: 24px;
+    text-align: center;
+}
+
+.nav-text {
+    font-size: 16px;
+}
+
+/* Sidebar Toggle Button (Mobile) */
+.sidebar-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #1F2937;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    z-index: 999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+.sidebar-toggle:hover {
+    background-color: #374151;
+}
+
+.toggle-icon {
+    font-size: 24px;
+    color: #FFFFFF;
+}
+
+/* Sidebar Overlay (Mobile) */
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Mobile Styles - Sidebar Hidden by Default */
+@media (max-width: 768px) {
+    body {
+        padding-right: 0;
+    }
+
+    .sidebar-toggle {
+        display: flex;
+    }
+
+    .sidebar {
+        transform: translateX(100%);
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .container {
+        margin-right: 0;
+        padding: 15px;
+        padding-top: 80px;
+    }
+}
+
+/* Desktop Styles - Sidebar Always Visible */
+@media (min-width: 769px) {
+    body {
+        margin-right: 280px;
+    }
+
+    .sidebar-toggle {
+        display: none;
+    }
+
+    .sidebar-close {
+        display: none;
+    }
+
+    .sidebar-overlay {
+        display: none;
+    }
 }
 
 .container {
     max-width: 1400px;
     margin: 0 auto;
-    background-color: #FFFFFF;
+    background-color: #111827;
     padding: 30px;
     border-radius: 8px;
 }
@@ -26,14 +244,14 @@ body {
     align-items: center;
     gap: 8px;
     padding-bottom: 15px;
-    border-bottom: 1px solid #E5E5E5;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     margin-bottom: 30px;
-    color: #666;
+    color: rgba(255, 255, 255, 0.9);
     font-size: 14px;
 }
 
 .breadcrumb .separator {
-    color: #CCCCCC;
+    color: rgba(255, 255, 255, 0.5);
 }
 
 /* Sections */
@@ -44,48 +262,53 @@ body {
 .section-title {
     font-size: 28px;
     font-weight: bold;
-    color: #1F2937;
+    color: #FFFFFF;
     margin-bottom: 10px;
 }
 
 .section-subtitle {
     font-size: 14px;
-    color: #6B7280;
+    color: rgba(255, 255, 255, 0.7);
     margin-bottom: 20px;
 }
 
 .age-subtitle {
-    border-bottom: 2px solid #1F2937;
+    border-bottom: 2px solid #FFFFFF;
     padding-bottom: 5px;
     display: inline-block;
     margin-bottom: 20px;
 }
 
 /* Card Styles */
-.card {
-    background-color: #FFFFFF;
-    border: 1px solid #E5E7EB;
+.total-books-card {
+    background-color: #FBBF24;
+    border: none;
     border-radius: 8px;
-    padding: 30px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     max-width: 400px;
+}
+
+.card-yellow-bar {
+    display: none;
 }
 
 .card-content {
     display: flex;
     flex-direction: column;
+    padding: 30px;
 }
 
 .card-label {
     font-size: 16px;
-    color: #374151;
+    color: #1F2937;
     margin-bottom: 15px;
 }
 
 .card-value {
     font-size: 48px;
     font-weight: bold;
-    color: #C2410C;
+    color: #1F2937;
 }
 
 /* Stats Cards */
@@ -96,64 +319,69 @@ body {
 }
 
 .stat-card {
-    background-color: #FFFFFF;
-    border: 1px solid #E5E7EB;
+    background-color: transparent;
+    border: none;
     border-radius: 8px;
-    padding: 25px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    box-shadow: none;
     position: relative;
     flex: 1;
     min-width: 250px;
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-bar {
+    background-color: #9333EA;
+    border-radius: 8px;
+    padding: 30px;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.listening-card .stat-bar {
+    background-color: #60A5FA;
 }
 
 .stat-icon {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    width: 30px;
-    height: 30px;
-    background-color: #F3F4F6;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-    color: #9CA3AF;
+    display: none;
 }
 
 .revenue-card .stat-title {
-    color: #9333EA;
+    color: #FFFFFF;
     font-size: 16px;
     margin-bottom: 10px;
-    margin-top: 5px;
+    font-weight: 500;
 }
 
 .revenue-card .stat-value {
-    color: #9333EA;
-    font-size: 32px;
+    color: #FFFFFF;
+    font-size: 36px;
     font-weight: bold;
 }
 
 .listening-card .stat-title {
-    color: #2563EB;
+    color: #FFFFFF;
     font-size: 16px;
     margin-bottom: 10px;
-    margin-top: 5px;
+    font-weight: 500;
 }
 
 .listening-card .stat-value {
-    color: #2563EB;
-    font-size: 32px;
+    color: #FFFFFF;
+    font-size: 36px;
     font-weight: bold;
 }
 
 /* Table Styles */
 .table-container {
-    background-color: #FFFFFF;
-    border: 1px solid #E5E7EB;
+    background-color: #1F2937;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .data-table {
@@ -162,16 +390,16 @@ body {
 }
 
 .data-table thead {
-    background-color: #F9FAFB;
+    background-color: rgba(255, 255, 255, 0.05);
 }
 
 .data-table th {
     padding: 15px;
     text-align: right;
     font-weight: 600;
-    color: #6B7280;
+    color: rgba(255, 255, 255, 0.9);
     font-size: 14px;
-    border-bottom: 1px solid #E5E7EB;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .data-table th.sortable {
@@ -184,11 +412,11 @@ body {
 
 .sort-icon {
     margin-right: 5px;
-    color: #9CA3AF;
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .data-table tbody tr {
-    border-bottom: 1px solid #E5E7EB;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .data-table tbody tr:last-child {
@@ -198,7 +426,7 @@ body {
 .data-table td {
     padding: 15px;
     text-align: right;
-    color: #1F2937;
+    color: rgba(255, 255, 255, 0.9);
     font-size: 14px;
 }
 
@@ -227,7 +455,18 @@ body {
 }
 
 .data-table tbody tr:hover {
-    background-color: #F9FAFB;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.platform-badge {
+    display: inline-block;
+    background-color: #60A5FA;
+    color: #FFFFFF;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-left: 4px;
+    font-weight: 500;
 }
 
 /* Chart Cards */
@@ -238,12 +477,12 @@ body {
 }
 
 .chart-card {
-    background-color: #FFFFFF;
-    border: 1px solid #E5E7EB;
+    background-color: #1F2937;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
     padding: 25px;
     padding-top: 80px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     flex: 1;
     min-width: 400px;
     position: relative;
@@ -252,11 +491,11 @@ body {
 }
 
 .chart-card-full {
-    background-color: #FFFFFF;
-    border: 1px solid #E5E7EB;
+    background-color: #1F2937;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
     padding: 25px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     position: relative;
     display: flex;
     flex-direction: column;
@@ -278,7 +517,7 @@ body {
 
 .legend-title {
     font-size: 14px;
-    color: #6B7280;
+    color: rgba(255, 255, 255, 0.9);
     margin-bottom: 10px;
     font-weight: 600;
 }
@@ -288,7 +527,7 @@ body {
     align-items: center;
     gap: 8px;
     font-size: 14px;
-    color: #374151;
+    color: rgba(255, 255, 255, 0.9);
     margin-bottom: 8px;
 }
 
@@ -329,10 +568,6 @@ canvas {
     
     .chart-card {
         min-width: 100%;
-    }
-    
-    .container {
-        padding: 15px;
     }
 }
 
