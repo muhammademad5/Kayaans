@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة الكتب | دار كيان</title>
+    <link rel="stylesheet" href="books.css">
+</head>
+<body>
+    <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+        <span class="toggle-icon">☰</span>
+    </button>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-brand">
+                <div class="brand-icon">P</div>
+                <div class="brand-info">
+                    <div class="brand-name">Povo Distribution</div>
+                    <div class="brand-subtitle">لوحة التحليلات</div>
+                </div>
+            </div>
+            <button class="sidebar-close" id="sidebarClose" aria-label="Close sidebar">
+                <span>×</span>
+            </button>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="index.html" class="nav-item">
+                <span class="nav-icon">📊</span>
+                <span class="nav-text">تحليلات</span>
+            </a>
+            <a href="revenue.html" class="nav-item">
+                <span class="nav-icon">💰</span>
+                <span class="nav-text">الإيرادات</span>
+            </a>
+            <a href="books.html" class="nav-item active">
+                <span class="nav-icon">📚</span>
+                <span class="nav-text">الكتب</span>
+            </a>
+            <a href="platforms.html" class="nav-item">
+                <span class="nav-icon">🖥️</span>
+                <span class="nav-text">المنصات</span>
+            </a>
+            <a href="invoices.html" class="nav-item">
+                <span class="nav-icon">🧾</span>
+                <span class="nav-text">الفواتير</span>
+            </a>
+            <a href="notes.html" class="nav-item">
+                <span class="nav-icon">📝</span>
+                <span class="nav-text">الملاحظات</span>
+            </a>
+        </nav>
+    </aside>
+
+    <div class="books-page">
+        <header class="page-toolbar">
+            <div class="toolbar-left">
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle sidebar">
+                    <span class="menu-icon">☰</span>
+                </button>
+            </div>
+
+        </header>
+
+        <main class="books-content">
+            <div class="section-header">
+                <div class="header-title">
+                    <h1>الكتب</h1>
+                </div>
+                <div class="header-filters">
+                    <div class="filter-select" data-filter="period">
+                        <button class="filter-trigger">
+                            <span class="filter-label">كل الفترات</span>
+                            <span class="chevron">⌄</span>
+                        </button>
+                        <ul class="filter-menu">
+                            <li class="active" data-value="all">كل الفترات</li>
+                            <li data-value="month">هذا الشهر</li>
+                            <li data-value="quarter">هذا الربع</li>
+                            <li data-value="year">هذا العام</li>
+                        </ul>
+                    </div>
+                    <div class="filter-select" data-filter="platform">
+                        <button class="filter-trigger">
+                            <span class="filter-label">كل المنصات</span>
+                            <span class="chevron">⌄</span>
+                        </button>
+                        <ul class="filter-menu">
+                            <li class="active" data-value="all">كل المنصات</li>
+                            <li data-value="abjad">أبجد</li>
+                            <li data-value="wajez">وجيز</li>
+                            <li data-value="iqra">أقرأ لي</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <section class="books-card">
+                <div class="books-card-head">
+                    <div>
+                        <p class="card-eyebrow">أداء الكتب</p>
+                        <h2>لوحة تحكم بوفو</h2>
+                        <p class="card-subtitle">
+                            تحليلات الأداء للكتب الصوتية الموزعة عبر المنصات
+                        </p>
+                    </div>
+                    <div class="tab-chip-group">
+                        <button class="tab-chip active" data-label="كل الكتب">كل الكتب</button>
+                        <button class="tab-chip" data-label="الأكثر إنتشاراً">الأكثر إنتشاراً</button>
+                        <button class="tab-chip" data-label="إصدارات حديثة">إصدارات حديثة</button>
+                    </div>
+                </div>
+
+                <div class="books-table-wrapper">
+                    <div class="table-scroll">
+                        <table class="books-table">
+                            <thead>
+                                <tr>
+                                    <th>اسم الكتاب</th>
+                                    <th>المنصات</th>
+                                    <th>الإيرادات</th>
+                                    <th>دقائق الاستماع</th>
+                                    <th>التقييم</th>
+                                    <th>معدل الاستماع الكامل</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr data-platforms="wajez,abjad" data-periods="month,quarter,year">
+                                    <td>
+                                        <div class="book-info">
+                                            <p class="book-name">فن اللامبالاة</p>
+                                            <p class="book-meta">سلسلة الوعي الذهني</p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="platform-chip">وجيز</span>
+                                        <span class="platform-chip muted">أبجد</span>
+                                    </td>
+                                    <td class="money">$2,200</td>
+                                    <td>480</td>
+                                    <td>
+                                        <div class="rating">
+                                            <span>4.6</span>
+                                            <span class="star">★</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="completion">
+                                            <span class="completion-value">85%</span>
+                                            <div class="progress">
+                                                <span style="width: 85%;"></span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr data-platforms="wajez" data-periods="quarter,year">
+                                    <td>
+                                        <div class="book-info">
+                                            <p class="book-name">العادات الذرية</p>
+                                            <p class="book-meta">تنمية ذاتية</p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="platform-chip">وجيز</span>
+                                    </td>
+                                    <td class="money">$1,800</td>
+                                    <td>420</td>
+                                    <td>
+                                        <div class="rating">
+                                            <span>4.4</span>
+                                            <span class="star">★</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="completion">
+                                            <span class="completion-value">78%</span>
+                                            <div class="progress">
+                                                <span style="width: 78%;"></span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr data-platforms="iqra" data-periods="month,year">
+                                    <td>
+                                        <div class="book-info">
+                                            <p class="book-name">قوة الآن</p>
+                                            <p class="book-meta">تطوير الذات</p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="platform-chip accent">أقرأ لي</span>
+                                    </td>
+                                    <td class="money">$1,500</td>
+                                    <td>360</td>
+                                    <td>
+                                        <div class="rating">
+                                            <span>4.5</span>
+                                            <span class="star">★</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="completion">
+                                            <span class="completion-value">82%</span>
+                                            <div class="progress">
+                                                <span style="width: 82%;"></span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr data-platforms="wajez,abjad" data-periods="year">
+                                    <td>
+                                        <div class="book-info">
+                                            <p class="book-name">التفكير السريع والبطيء</p>
+                                            <p class="book-meta">علوم معرفية</p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="platform-chip">وجيز</span>
+                                        <span class="platform-chip">أبجد</span>
+                                    </td>
+                                    <td class="money">$1,000</td>
+                                    <td>240</td>
+                                    <td>
+                                        <div class="rating">
+                                            <span>4.3</span>
+                                            <span class="star">★</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="completion">
+                                            <span class="completion-value">72%</span>
+                                            <div class="progress">
+                                                <span style="width: 72%;"></span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="no-results" id="noResults">
+                            <p>لا توجد نتائج مطابقة للفلتر الحالي.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="books.js"></script>
+</body>
+</html>
+

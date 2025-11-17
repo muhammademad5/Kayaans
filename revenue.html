@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الإيرادات | دار كيان</title>
+    <link rel="stylesheet" href="revenue.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+        <span class="toggle-icon">☰</span>
+    </button>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-brand">
+                <div class="brand-icon">P</div>
+                <div class="brand-info">
+                    <div class="brand-name">Povo Distribution</div>
+                    <div class="brand-subtitle">لوحة التحليلات</div>
+                </div>
+            </div>
+            <button class="sidebar-close" id="sidebarClose" aria-label="Close sidebar">
+                <span>×</span>
+            </button>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="index.html" class="nav-item">
+                <span class="nav-icon">📊</span>
+                <span class="nav-text">تحليلات</span>
+            </a>
+            <a href="revenue.html" class="nav-item active">
+                <span class="nav-icon">💰</span>
+                <span class="nav-text">الإيرادات</span>
+            </a>
+            <a href="books.html" class="nav-item">
+                <span class="nav-icon">📚</span>
+                <span class="nav-text">الكتب</span>
+            </a>
+            <a href="platforms.html" class="nav-item">
+                <span class="nav-icon">🖥️</span>
+                <span class="nav-text">المنصات</span>
+            </a>
+            <a href="invoices.html" class="nav-item">
+                <span class="nav-icon">🧾</span>
+                <span class="nav-text">الفواتير</span>
+            </a>
+            <a href="notes.html" class="nav-item">
+                <span class="nav-icon">📝</span>
+                <span class="nav-text">الملاحظات</span>
+            </a>
+        </nav>
+    </aside>
+
+    <div class="revenue-page">
+        <header class="page-toolbar">
+            <div class="toolbar-left">
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle sidebar">
+                    <span class="menu-icon">☰</span>
+                </button>
+            </div>
+            <div class="toolbar-right">
+                <div class="profile-card">
+                    <div class="profile-info">
+                        <p class="profile-name">POVO Studios</p>
+                        <p class="profile-subtitle">توزيع الكتب الصوتية</p>
+                    </div>
+                    <div class="profile-avatar">P</div>
+                </div>
+                <div class="workspace-chip">
+                    <span class="workspace-avatar">د</span>
+                    <div class="workspace-meta">
+                        <p class="workspace-title">دار كيان</p>
+                        <p class="workspace-subtitle">لوحة التحكم</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="revenue-content">
+            <section class="stats-grid">
+                <div class="stat-card purple">
+                    <div class="stat-top">
+                        <span class="stat-label">متوسط التقييم العام</span>
+                        <span class="stat-icon">⭐</span>
+                    </div>
+                    <div class="stat-value">4.5</div>
+                    <div class="stat-trend positive">+0.3%</div>
+                </div>
+                <div class="stat-card green">
+                    <div class="stat-top">
+                        <span class="stat-label">عدد الكتب</span>
+                        <span class="stat-icon">📔</span>
+                    </div>
+                    <div class="stat-value">4</div>
+                    <div class="stat-trend positive">+0.3%</div>
+                </div>
+                <div class="stat-card brown">
+                    <div class="stat-top">
+                        <span class="stat-label">عدد دقائق الاستماع</span>
+                        <span class="stat-icon">🎧</span>
+                    </div>
+                    <div class="stat-value">1,500</div>
+                    <div class="stat-trend positive">+8.3%</div>
+                </div>
+                <div class="stat-card blue">
+                    <div class="stat-top">
+                        <span class="stat-label">إجمالي الإيرادات</span>
+                        <span class="stat-icon">💵</span>
+                    </div>
+                    <div class="stat-value">$6,500</div>
+                    <div class="stat-trend positive">+12.5%</div>
+                </div>
+            </section>
+
+            <section class="chart-card full">
+                <div class="chart-header">
+                    <h2>تطور الإيرادات عبر الأشهر</h2>
+                </div>
+                <canvas id="revenueLineChart"></canvas>
+            </section>
+
+            <section class="charts-row">
+                <div class="chart-card">
+                    <h3>الكتب الأكثر استماعاً</h3>
+                    <canvas id="listenedBooksChart"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h3>الكتب الأكثر مبيعاً</h3>
+                    <canvas id="topSellingChart"></canvas>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="revenue.js"></script>
+</body>
+</html>
+

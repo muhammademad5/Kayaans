@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المنصات | دار كيان</title>
+    <link rel="stylesheet" href="platforms.css">
+</head>
+<body>
+    <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+        <span class="toggle-icon">☰</span>
+    </button>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-brand">
+                <div class="brand-icon">P</div>
+                <div class="brand-info">
+                    <div class="brand-name">Povo Distribution</div>
+                    <div class="brand-subtitle">لوحة التحليلات</div>
+                </div>
+            </div>
+            <button class="sidebar-close" id="sidebarClose" aria-label="Close sidebar">
+                <span>×</span>
+            </button>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="index.html" class="nav-item">
+                <span class="nav-icon">📊</span>
+                <span class="nav-text">تحليلات</span>
+            </a>
+            <a href="revenue.html" class="nav-item">
+                <span class="nav-icon">💰</span>
+                <span class="nav-text">الإيرادات</span>
+            </a>
+            <a href="books.html" class="nav-item">
+                <span class="nav-icon">📚</span>
+                <span class="nav-text">الكتب</span>
+            </a>
+            <a href="platforms.html" class="nav-item active">
+                <span class="nav-icon">🖥️</span>
+                <span class="nav-text">المنصات</span>
+            </a>
+            <a href="invoices.html" class="nav-item">
+                <span class="nav-icon">🧾</span>
+                <span class="nav-text">الفواتير</span>
+            </a>
+            <a href="notes.html" class="nav-item">
+                <span class="nav-icon">📝</span>
+                <span class="nav-text">الملاحظات</span>
+            </a>
+        </nav>
+    </aside>
+
+    <div class="platforms-page">
+        <header class="page-toolbar">
+            <div class="toolbar-left">
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle sidebar">
+                    <span class="menu-icon">☰</span>
+                </button>
+            </div>
+            
+        </header>
+
+        <main class="platforms-content">
+            <section class="section">
+                <div class="section-head">
+                    <div>
+                        <p class="section-eyebrow">المنصات</p>
+                        <h1>أداء المنصات</h1>
+                    </div>
+                    <p class="section-subtitle">مقارنة أداء المنصات من حيث عدد الكتب والإيرادات ودقائق الاستماع.</p>
+                </div>
+                <div class="table-card">
+                    <table class="platforms-table">
+                        <thead>
+                            <tr>
+                                <th>المنصة</th>
+                                <th>عدد الكتب</th>
+                                <th>الإيرادات</th>
+                                <th>التقييم</th>
+                                <th>دقائق الاستماع</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="platform-info">
+                                        <span class="platform-name">أبجد</span>
+                                        <span class="platform-tag">مميزة</span>
+                                    </div>
+                                </td>
+                                <td>2</td>
+                                <td>$3,200</td>
+                                <td>
+                                    <span class="rating">4.6 <span class="star">★</span></span>
+                                </td>
+                                <td>720</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="platform-info">
+                                        <span class="platform-name">وجيز</span>
+                                        <span class="platform-tag secondary">مستقرة</span>
+                                    </div>
+                                </td>
+                                <td>1</td>
+                                <td>$1,800</td>
+                                <td>
+                                    <span class="rating">4.4 <span class="star">★</span></span>
+                                </td>
+                                <td>420</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="platform-info">
+                                        <span class="platform-name">أقرأ لي</span>
+                                        <span class="platform-tag accent">نامية</span>
+                                    </div>
+                                </td>
+                                <td>1</td>
+                                <td>$1,500</td>
+                                <td>
+                                    <span class="rating">4.5 <span class="star">★</span></span>
+                                </td>
+                                <td>360</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="platforms.js"></script>
+</body>
+</html>
+

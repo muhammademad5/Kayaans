@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الملاحظات | دار كيان</title>
+    <link rel="stylesheet" href="notes.css">
+</head>
+<body>
+    <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+        <span class="toggle-icon">☰</span>
+    </button>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-brand">
+                <div class="brand-icon">P</div>
+                <div class="brand-info">
+                    <div class="brand-name">Povo Distribution</div>
+                    <div class="brand-subtitle">لوحة التحليلات</div>
+                </div>
+            </div>
+            <button class="sidebar-close" id="sidebarClose" aria-label="Close sidebar">
+                <span>×</span>
+            </button>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="index.html" class="nav-item">
+                <span class="nav-icon">📊</span>
+                <span class="nav-text">تحليلات</span>
+            </a>
+            <a href="revenue.html" class="nav-item">
+                <span class="nav-icon">💰</span>
+                <span class="nav-text">الإيرادات</span>
+            </a>
+            <a href="books.html" class="nav-item">
+                <span class="nav-icon">📚</span>
+                <span class="nav-text">الكتب</span>
+            </a>
+            <a href="platforms.html" class="nav-item">
+                <span class="nav-icon">🖥️</span>
+                <span class="nav-text">المنصات</span>
+            </a>
+            <a href="invoices.html" class="nav-item">
+                <span class="nav-icon">🧾</span>
+                <span class="nav-text">الفواتير</span>
+            </a>
+            <a href="notes.html" class="nav-item active">
+                <span class="nav-icon">📝</span>
+                <span class="nav-text">الملاحظات</span>
+            </a>
+        </nav>
+    </aside>
+
+    <div class="notes-page">
+        <header class="notes-toolbar">
+            <div class="toolbar-left">
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle sidebar">
+                    <span class="menu-icon">☰</span>
+                </button>
+            </div>
+            
+        </header>
+
+        <main class="notes-content">
+            
+            <section class="notes-panel">
+                <div class="panel-header">
+                    <div>
+                        <p class="panel-eyebrow">ملحوظات وتحليلات</p>
+                        <h2>الملاحظات</h2>
+                    </div>
+                    <div class="note-filters">
+                        <button class="note-filter active" data-filter="all">كل الملاحظات</button>
+                        <button class="note-filter" data-filter="growth">المنصات</button>
+                        <button class="note-filter" data-filter="books">الكتب</button>
+                        <button class="note-filter" data-filter="actions">توصيات حديثة</button>
+                    </div>
+                </div>
+                <ul class="notes-list">
+                    <li class="note-card" data-category="books">
+                        <div class="note-body">
+                            <h3>الكتب الأعلى أداء</h3>
+                            <p>كتاب "فن اللامبالاة" يتصدر القائمة بإيرادات 2200 دولار ومعدل استماع كامل 68%</p>
+                        </div>
+                        <div class="note-meta">
+                            <span class="note-author">دار كيان</span>
+                            <span class="note-icon">⏱</span>
+                            <span class="note-date">2025-11-08</span>
+                        </div>
+                    </li>
+                    <li class="note-card" data-category="growth">
+                        <div class="note-body">
+                            <h3>المنصات ذات النمو الأعلى</h3>
+                            <p>منصة "أبجد" تُظهر نمواً بنسبة 15% في دقائق الاستماع مقارنة بالشهر الماضي</p>
+                        </div>
+                            <div class="note-meta">
+                                <span class="note-author">فريق السعادة</span>
+                                <span class="note-icon">⏱</span>
+                                <span class="note-date">2025-11-07</span>
+                            </div>
+                    </li>
+                    <li class="note-card" data-category="actions">
+                        <div class="note-body">
+                            <h3>توصيات لتحسين الأداء</h3>
+                            <p>التركيز على الترويج في مصر والسعودية حيث تمثل 55% من قاعدة المستمعين</p>
+                        </div>
+                        <div class="note-meta">
+                            <span class="note-author">دار كيان</span>
+                            <span class="note-icon">⏱</span>
+                            <span class="note-date">2025-11-06</span>
+                        </div>
+                    </li>
+                    <li class="note-card" data-category="books">
+                        <div class="note-body">
+                            <h3>إصدارات قادمة</h3>
+                            <p>يجري تجهيز 3 كتب جديدة للرفع على منصات "وجيز" و"اقرأ لي" خلال الأسبوع المقبل.</p>
+                        </div>
+                        <div class="note-meta">
+                            <span class="note-author">إدارة الإنتاج</span>
+                            <span class="note-icon">⏱</span>
+                            <span class="note-date">2025-11-05</span>
+                        </div>
+                    </li>
+                    <li class="note-card" data-category="growth">
+                        <div class="note-body">
+                            <h3>مؤشرات التفاعل</h3>
+                            <p>متوسط زمن الاستماع ارتفع إلى 32 دقيقة بزيادة 6% عن الربع السابق.</p>
+                        </div>
+                        <div class="note-meta">
+                            <span class="note-author">قسم التحليلات</span>
+                            <span class="note-icon">⏱</span>
+                            <span class="note-date">2025-11-04</span>
+                        </div>
+                    </li>
+                    <li class="note-card" data-category="actions">
+                        <div class="note-body">
+                            <h3>تنبيه جودة</h3>
+                            <p>تم رصد تعليقات تتعلق بجودة الصوت في منصة "أقرأ لي" لكتاب "التفكير السريع والبطيء".</p>
+                        </div>
+                        <div class="note-meta">
+                            <span class="note-author">دعم المستمعين</span>
+                            <span class="note-icon">⏱</span>
+                            <span class="note-date">2025-11-02</span>
+                        </div>
+                    </li>
+                </ul>
+                <div class="notes-empty" id="notesEmptyState">
+                    <p>لا توجد ملاحظات ضمن هذا التصنيف حالياً.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="notes.js"></script>
+</body>
+</html>
+

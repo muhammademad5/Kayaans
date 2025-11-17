@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الفواتير | دار كيان</title>
+    <link rel="stylesheet" href="invoices.css">
+</head>
+<body>
+    <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+        <span class="toggle-icon">☰</span>
+    </button>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-brand">
+                <div class="brand-icon">P</div>
+                <div class="brand-info">
+                    <div class="brand-name">Povo Distribution</div>
+                    <div class="brand-subtitle">لوحة التحليلات</div>
+                </div>
+            </div>
+            <button class="sidebar-close" id="sidebarClose" aria-label="Close sidebar">
+                <span>×</span>
+            </button>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="index.html" class="nav-item">
+                <span class="nav-icon">📊</span>
+                <span class="nav-text">تحليلات</span>
+            </a>
+            <a href="revenue.html" class="nav-item">
+                <span class="nav-icon">💰</span>
+                <span class="nav-text">الإيرادات</span>
+            </a>
+            <a href="books.html" class="nav-item">
+                <span class="nav-icon">📚</span>
+                <span class="nav-text">الكتب</span>
+            </a>
+            <a href="platforms.html" class="nav-item">
+                <span class="nav-icon">🖥️</span>
+                <span class="nav-text">المنصات</span>
+            </a>
+            <a href="invoices.html" class="nav-item active">
+                <span class="nav-icon">🧾</span>
+                <span class="nav-text">الفواتير</span>
+            </a>
+            <a href="notes.html" class="nav-item">
+                <span class="nav-icon">📝</span>
+                <span class="nav-text">الملاحظات</span>
+            </a>
+        </nav>
+    </aside>
+
+    <div class="invoices-page">
+        <header class="page-toolbar">
+            <div class="toolbar-left">
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle sidebar">
+                    <span class="menu-icon">☰</span>
+                </button>
+            </div>
+            
+        </header>
+
+        <main class="invoices-content">
+            <section class="section">
+                <div class="section-head">
+                    <div>
+                        <p class="section-eyebrow">الفواتير</p>
+                        <h1>ملخص الفواتير</h1>
+                    </div>
+                    <p class="section-subtitle">آخر الفواتير الصادرة مع حالة الدفع لكل عميل.</p>
+                </div>
+                <div class="table-card">
+                    <table class="invoices-table">
+                        <thead>
+                            <tr>
+                                <th>رقم الفاتورة</th>
+                                <th>العميل</th>
+                                <th>المبلغ</th>
+                                <th>التاريخ</th>
+                                <th>الحالة</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>INV-001</td>
+                                <td>دار كيان</td>
+                                <td>$6,500</td>
+                                <td>2025-11-01</td>
+                                <td><span class="status-badge paid">مدفوعة</span></td>
+                            </tr>
+                            <tr>
+                                <td>INV-002</td>
+                                <td>دار الشروق</td>
+                                <td>$4,200</td>
+                                <td>2025-10-15</td>
+                                <td><span class="status-badge pending">غير مدفوعة</span></td>
+                            </tr>
+                            <tr>
+                                <td>INV-003</td>
+                                <td>دار المعارف</td>
+                                <td>$5,800</td>
+                                <td>2025-10-01</td>
+                                <td><span class="status-badge paid">مدفوعة</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="invoices.js"></script>
+</body>
+</html>
+
